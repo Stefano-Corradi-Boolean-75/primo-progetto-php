@@ -10,6 +10,7 @@
   <h1>questo è un file php</h1>
 
   <?php
+  stampaSaluto();
   
     // codice PHP
 
@@ -161,10 +162,24 @@ foreach ($animals as $animalClass) {
  }
 }
 
+function stampaSaluto(){
+  echo 'Caio!!!!';
+}
+
+function stampaNomeCognomeConReturn($user){
+  return $user['nome'] . ' ' . $user['cognome'];
+}
+
+function stampaNomeCognomeConEcho($user){
+  echo $user['nome'] . ' ' . $user['cognome'];
+}
+
 
   ?>
 
   <p>Benvenuto <?php echo $nome; ?></p>
+  <p>Benvenuto con return <?php echo stampaNomeCognomeConReturn($utente); ?></p>
+  <p>Benvenuto con echo <?php stampaNomeCognomeConEcho($utente); ?></p>
 
   <form action="./pagina-di-atterraggio.php" method="POST">
     <input type="text" name="nome" placeholder="nome" /><br>
