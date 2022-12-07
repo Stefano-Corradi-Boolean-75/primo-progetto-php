@@ -174,6 +174,43 @@ function stampaNomeCognomeConEcho($user){
   echo $user['nome'] . ' ' . $user['cognome'];
 }
 
+echo "<br> ------------ OOP -------------------------------";
+class User{
+  public $name;
+  public $email;
+  public function __construct($_name, $_email = null)
+  {
+    $this->name = $_name;
+    $this->email = $_email;
+  }
+
+  public function getFullInfo(){
+    return "Nome: $this->name - Email: $this->email ";
+  }
+
+  public function saluta($saluto){
+    // 
+    return "$saluto $this->name";
+  }
+
+
+}
+
+$ugo = new User("Ugo","ugo@gmail.com");
+$martina = new User("Martina", "martina@gmail.com");
+$filippo = new User("Filippo");
+
+var_dump($ugo);
+var_dump($martina);
+var_dump($filippo);
+var_dump($ugo->name);
+var_dump($martina->name);
+var_dump($martina->getFullInfo());
+var_dump($ugo->saluta('Ciao'));
+
+
+echo "<br> ------------ /OOP -------------------------------";
+
 
   ?>
 
